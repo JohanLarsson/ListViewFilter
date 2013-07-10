@@ -35,7 +35,7 @@ namespace CollectionUpdate
             await Task.Delay(100);
             for (int i = 0; i < 20; i++)
             {
-                _vm.Ints.Add(i);
+                _vm.Ints.Add(new Dummy{Value = i});
                 await Task.Delay(100);
             }
         }
@@ -43,7 +43,7 @@ namespace CollectionUpdate
         private void Filter_Click(object sender, RoutedEventArgs e)
         {
             var itemCollection = List.Items;
-            itemCollection.Filter = x => ((int) x)%2 == 0;
+            itemCollection.Filter = x => ((Dummy) x).Value%2 == 0;
         }
     }
 }

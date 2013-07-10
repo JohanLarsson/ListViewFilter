@@ -11,10 +11,15 @@ namespace CollectionUpdate
 {
     public class Vm
     {
-        private ObservableCollection<int> _ints;
-        public ObservableCollection<int> Ints
+        private ObservableCollection<Dummy> _ints;
+        public ObservableCollection<Dummy> Ints
         {
-            get { return _ints ?? (_ints = new ObservableCollection<int>()); }
+            get { return _ints ?? (_ints = new ObservableCollection<Dummy>()); }
         }
+    }
+
+    public class Dummy
+    {
+        public int Value { get; set; }
     }
 }

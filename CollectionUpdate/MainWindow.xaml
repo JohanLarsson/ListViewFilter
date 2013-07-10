@@ -8,14 +8,19 @@
         d:DataContext="{d:DesignInstance collectionUpdate:Vm}">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="55*"/>
         </Grid.RowDefinitions>
         <StackPanel>
             <Button Grid.Row="0" Click="Button_Click">Add a bunch</Button>
             <Button Grid.Row="0" Click="Filter_Click">Filter</Button>
         </StackPanel>
-
-        <ListBox x:Name="List" ItemsSource="{Binding Ints}" Grid.Row="1"/>
+        <ListView  Grid.Row="1" x:Name="List" ItemsSource="{Binding Ints}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Number" DisplayMemberBinding="{Binding Value}"></GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
     </Grid>
 </Window>
