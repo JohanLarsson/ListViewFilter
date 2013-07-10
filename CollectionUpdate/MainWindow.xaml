@@ -12,8 +12,11 @@
             <RowDefinition Height="55*"/>
         </Grid.RowDefinitions>
         <StackPanel>
-            <Button Grid.Row="0" Click="Button_Click">Add a bunch</Button>
+            <Button Grid.Row="0" Click="Button100_Click">Add 100</Button>
+            <Button Grid.Row="0" Click="Button1000_Click">Add 1000</Button>
+            <Button Grid.Row="0" Click="Button10000_Click">Add 10000</Button>
             <Button Grid.Row="0" Click="Filter_Click">Filter</Button>
+            <TextBlock x:Name="Time"></TextBlock>
         </StackPanel>
         <ListView  Grid.Row="1" x:Name="List" ItemsSource="{Binding Ints}">
             <ListView.View>
